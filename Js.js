@@ -633,97 +633,26 @@ document.addEventListener("DOMContentLoaded", () => {
     const searchBar = document.getElementById("searchBar");
     let currentIndex = 0;
 
-    const allGenres = [
-    "Alternative Metal",
-    "Ambient Metal",
-    "Atmospheric Black Metal",
-    "Atmospheric Sludge Metal",
-    "Avant-Garde Metal",
-    "Beatdown Hardcore",
-    "Black Metal",
-    "Black 'n' Roll",
-    "Blackened Death Metal",
-    "Blackened Thrash Metal",
-    "Blackgaze",
-    "Blue Metal",
-    "Brutal Death Metal",
-    "Celtic Metal",
-    "Christian Metal",
-    "Crust Punk",
-    "Crossover Thrash",
-    "Dark Metal",
-    "Death Metal",
-    "Death 'n' Roll",
-    "Deathcore",
-    "Deathgrind",
-    "Depressive Black Metal",
-    "Djent",
-    "Doom Metal",
-    "Drone Metal",
-    "Industrial Metal",
-    "Epic Metal",
-    "Extreme Metal",
-    "Folk Metal",
-    "Funeral Doom",
-    "Funk Metal",
-    "Glam Metal",
-    "Goregrind",
-    "Gothic Metal",
-    "Grindcore",
-    "Groove Metal",
-    "Harajuku-core",
-    "Heavy Metal",
-    "Industrial Metal",
-    "Kawaii Metal",
-    "Mathcore",
-    "Medieval Metal",
-    "Melodic Black Metal",
-    "Melodic Death Metal",
-    "Melodic Metalcore",
-    "Metalcore",
-    "Moombahcore Metal",
-    "Neoclassical Metal",
-    "Nintendocore",
-    "Noise Metal",
-    "NWOBHM",
-    "NWOAHM",
-    "Nu Metal",
-    "Oriental Metal",
-    "Pagan Metal",
-    "Pirate Metal",
-    "Pornogrind",
-    "Post-Black Metal",
-    "Post-Metal",
-    "Power Metal",
-    "Progressive Death Metal",
-    "Progressive Metal",
-    "Progressive Metalcore",
-    "Rap Metal",
-    "Raw Black Metal",
-    "Ritual Ambient",
-    "Shock Rock",
-    "Slam Death Metal",
-    "Sludge Metal",
-    "Southern Metal",
-    "Space Metal",
-    "Speed Metal",
-    "Stoner Doom",
-    "Stoner Metal",
-    "Suicidal Black Metal",
-    "Symphonic Black Metal",
-    "Symphonic Death Metal",
-    "Symphonic Metal",
-    "Symphonic Power Metal",
-    "Technical Death Metal",
-    "Technical Thrash Metal",
-    "Thrash Metal",
-    "Thrashcore",
-    "Traditional Doom Metal",
-    "Unblack Metal",
-    "Viking Metal",
-    "War Metal",
-    "Non Qualifiable"
-];
+    // Extraire tous les genres uniques depuis les groupes
+    const allGenresSet = new Set();
+    bands.forEach(band => {
+        if (Array.isArray(band.genre)) {
+            band.genre.forEach(g => allGenresSet.add(g));
+        } else {
+            allGenresSet.add(band.genre);
+        }
+    });
+    const allGenres = [...allGenresSet].sort();
+
+    // Remplir le filtre des genres
+    console.log("Ajout des genres dans le select...");
+    allGenres.forEach(g => {
+        const option = document.createElement('option');
+        option.value = g;
+        option.textContent = g;
+        genreFilter.appendChild(option);
+    });
+    console.log("Nombre total d'options:", genreFilter.options.length);
 
   // Remplir le filtre des genres
     console.log("Ajout des genres dans le select...");
@@ -735,13 +664,41 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     console.log("Nombre total d'options:", genreFilter.options.length);
 
-    function displayBands(filter = "", genre = "allGenres") {
+    // Extraire tous les pays uniques et remplir le filtre
+    const paysFilter = document.getElementById("paysFilter");
+    const allPays = [...new Set(bands.map(b => b.origin.split(',').pop().trim()))].sort();
+    allPays.forEach(p => {
+        const option = document.createElement('option');
+        option.value = p;
+        option.textContent = p;
+        paysFilter.appendChild(option);
+    });
+
+    // Extraire toutes les années uniques et remplir le filtre
+    const anneeFilter = document.getElementById("anneeFilter");
+    const allYears = [...new Set(bands.map(b => b.year))].sort((a, b) => a - b);
+    allYears.forEach(y => {
+        const option = document.createElement('option');
+        option.value = y;
+        option.textContent = y;
+        anneeFilter.appendChild(option);
+    });
+
+    const statusFilter = document.getElementById("statusFilter");
+
+    function displayBands(filter = "", genre = "allGenres", pays = "allPays", annee = "allAnnees", status = "allStatus") {
         list.innerHTML = "";
         const filtered = bands.filter(b => {
             const matchesName = b.name.toLowerCase().includes(filter.toLowerCase());
             const matchesGenre = genre === "allGenres" || 
                 (Array.isArray(b.genre) ? b.genre.includes(genre) : b.genre === genre);
-            return matchesName && matchesGenre;
+            const matchesPays = pays === "allPays" || b.origin.includes(pays);
+            const matchesAnnee = annee === "allAnnees" || b.year == annee;
+            const matchesStatus = status === "allStatus" || 
+                (status === "actif" && b.yearEnd === null) ||
+                (status === "separe" && b.yearEnd !== null);
+            
+            return matchesName && matchesGenre && matchesPays && matchesAnnee && matchesStatus;
         });
         
         console.log(`Affichage de ${filtered.length} groupe(s)`);
@@ -769,23 +726,50 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     searchBar.addEventListener("input", e => {
-        displayBands(e.target.value, genreFilter.value);
+        displayBands(e.target.value, genreFilter.value, paysFilter.value, anneeFilter.value, statusFilter.value);
     });
 
     genreFilter.addEventListener("change", e => {
         console.log("Genre sélectionné:", e.target.value);
-        displayBands(searchBar.value, e.target.value);
+        displayBands(searchBar.value, e.target.value, paysFilter.value, anneeFilter.value, statusFilter.value);
+    });
+
+    paysFilter.addEventListener("change", e => {
+        console.log("Pays sélectionné:", e.target.value);
+        displayBands(searchBar.value, genreFilter.value, e.target.value, anneeFilter.value, statusFilter.value);
+    });
+
+    anneeFilter.addEventListener("change", e => {
+        console.log("Année sélectionnée:", e.target.value);
+        displayBands(searchBar.value, genreFilter.value, paysFilter.value, e.target.value, statusFilter.value);
+    });
+
+    statusFilter.addEventListener("change", e => {
+        console.log("Statut sélectionné:", e.target.value);
+        displayBands(searchBar.value, genreFilter.value, paysFilter.value, anneeFilter.value, e.target.value);
     });
 
     document.getElementById("randomBtn").addEventListener("click", () => {
-        // Filtrer les groupes selon le genre sélectionné
+        // Filtrer les groupes selon tous les filtres actifs
         const currentGenre = genreFilter.value;
-        const filteredBands = currentGenre === "allGenres" 
-            ? bands 
-            : bands.filter(b => Array.isArray(b.genre) ? b.genre.includes(currentGenre) : b.genre === currentGenre);
+        const currentPays = paysFilter.value;
+        const currentAnnee = anneeFilter.value;
+        const currentStatus = statusFilter.value;
+        
+        const filteredBands = bands.filter(b => {
+            const matchesGenre = currentGenre === "allGenres" || 
+                (Array.isArray(b.genre) ? b.genre.includes(currentGenre) : b.genre === currentGenre);
+            const matchesPays = currentPays === "allPays" || b.origin.includes(currentPays);
+            const matchesAnnee = currentAnnee === "allAnnees" || b.year == currentAnnee;
+            const matchesStatus = currentStatus === "allStatus" || 
+                (currentStatus === "actif" && b.yearEnd === null) ||
+                (currentStatus === "separe" && b.yearEnd !== null);
+            
+            return matchesGenre && matchesPays && matchesAnnee && matchesStatus;
+        });
         
         if (filteredBands.length === 0) {
-            alert("Aucun groupe disponible pour ce genre !");
+            alert("Aucun groupe disponible avec ces filtres !");
             return;
         }
         
