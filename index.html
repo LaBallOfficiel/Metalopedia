@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Metalopedia</title>
     <link rel="stylesheet" href="Style.css">
-    <link rel="icon" type="image/png" href="image/Icône.png">
+    <link rel="icon" type="image/png" href="img/Icon.png">
 </head>
 <body>
 
@@ -13,8 +13,23 @@
 <div class="controls">
     <button id="randomBtn">Découvrir un groupe aléatoire</button>
     <button id="firstBtn">Aller au premier groupe</button>
+    
     <select id="genreFilter">
         <option value="allGenres">Tous les genres</option>
+    </select>
+    
+    <select id="paysFilter">
+        <option value="allPays">Tous les pays</option>
+    </select>
+    
+    <select id="anneeFilter">
+        <option value="allAnnees">Toutes les années</option>
+    </select>
+    
+    <select id="statusFilter">
+        <option value="allStatus">Tous les statuts</option>
+        <option value="actif">Actifs</option>
+        <option value="separe">Séparés</option>
     </select>
 </div>
 <input type="text" id="searchBar" placeholder="Rechercher un groupe...">
@@ -24,5 +39,3 @@
 <script src="Js.js"></script>
 </body>
 </html>
-
-
