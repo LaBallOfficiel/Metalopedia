@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Melalopedia</title>
-    <link rel="icon" type="image/png" href="img/icon.png">
+    <link rel="icon" type="image/png" href="image/icon.png">
     <link rel="stylesheet" href="Style.css">
 </head>
 <body>
@@ -50,12 +50,22 @@
 
 <div id="counter" class="counter">Groupes affichés : <span id="countNumber">0</span></div>
 
+<!-- Bouton pour ouvrir le calendrier de l'Avent -->
+<button id="adventBtn" class="advent-btn">🎄</button>
+
+<!-- Calendrier de l'Avent -->
+<div id="adventCalendar" class="advent-calendar">
+    <div class="advent-header">
+        🎄 Calendrier de l'Avent Metal 🎄
+        <button id="closeAdvent" class="close-advent">✕</button>
+    </div>
+    <div class="advent-grid" id="adventGrid"></div>
+</div>
+
 <div id="list"></div>
 
 <script src="Groupe.js"></script>
 <script src="Js.js"></script>
 
 </body>
-
 </html>
-

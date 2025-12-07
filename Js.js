@@ -51,6 +51,189 @@ bands.sort((a, b) => a.name.localeCompare(b.name));
 
     const statusFilter = document.getElementById("statusFilter");
 
+    // Calendrier de l'Avent - Groupes par jour avec styles différents
+    const adventBands = [
+        { day: 1, band: "Black Sabbath", genre: "Heavy Metal" },
+        { day: 2, band: "Mayhem", genre: "Black Metal" },
+        { day: 3, band: "Meshuggah", genre: "Djent" },
+        { day: 4, band: "Nightwish", genre: "Symphonic Metal" },
+        { day: 5, band: "Cannibal Corpse", genre: "Death Metal" },
+        { day: 6, band: "Metallica", genre: "Thrash Metal" },
+        { day: 7, band: "Sleep", genre: "Stoner Metal" },
+        { day: 8, band: "Korn", genre: "Nu Metal" },
+        { day: 9, band: "Opeth", genre: "Progressive Death Metal" },
+        { day: 10, band: "Rammstein", genre: "Industrial Metal" },
+        { day: 11, band: "Lamb of God", genre: "Groove Metal" },
+        { day: 12, band: "DragonForce", genre: "Power Metal" },
+        { day: 13, band: "Burzum", genre: "Atmospheric Black Metal" },
+        { day: 14, band: "Deftones", genre: "Alternative Metal" },
+        { day: 15, band: "Ghost", genre: "Non Qualifiable" },
+        { day: 16, band: "Alcest", genre: "Blackgaze" },
+        { day: 17, band: "Eluveitie", genre: "Folk Metal" },
+        { day: 18, band: "Gojira", genre: "Progressive Metal" },
+        { day: 19, band: "Slipknot", genre: "Nu Metal" },
+        { day: 20, band: "Architects", genre: "Metalcore" },
+        { day: 21, band: "Type O Negative", genre: "Gothic Metal" },
+        { day: 22, band: "Sabaton", genre: "Power Metal" },
+        { day: 23, band: "Tool", genre: "Progressive Metal" },
+        { day: 24, band: "Iron Maiden", genre: "Heavy Metal" }
+    ];
+
+    const adventEmojis = ["🎁", "⭐", "🔔", "🕯️", "❄️", "🎄", "🎅", "🦌", "⛄", "🎀", "🌟", "🎊"];
+
+    // Initialiser le calendrier de l'Avent
+    function initAdventCalendar() {
+        const adventGrid = document.getElementById('adventGrid');
+        if (!adventGrid) return;
+
+        const today = new Date();
+        const currentMonth = today.getMonth(); // 0 = janvier, 11 = décembre
+        const currentDay = today.getDate();
+        
+        // Charger les cases ouvertes
+        let openedDays = [];
+        try {
+            const saved = localStorage.getItem('adventOpened');
+            if (saved) openedDays = JSON.parse(saved);
+        } catch(e) {
+            console.log("Erreur chargement calendrier");
+        }
+
+        adventBands.forEach((item, index) => {
+            const dayDiv = document.createElement('div');
+            dayDiv.className = 'advent-day';
+            dayDiv.dataset.day = item.day;
+            dayDiv.dataset.emoji = adventEmojis[index % adventEmojis.length];
+            
+            // Vérifier si la case peut être ouverte
+            const canOpen = currentMonth === 11 && currentDay >= item.day; // Décembre = mois 11
+            const isOpened = openedDays.includes(item.day);
+            const isToday = currentMonth === 11 && currentDay === item.day;
+            
+            if (!canOpen) {
+                dayDiv.classList.add('locked');
+            }
+            
+            if (isOpened) {
+                dayDiv.classList.add('opened');
+            }
+            
+            if (isToday && !isOpened) {
+                dayDiv.classList.add('today');
+            }
+            
+            dayDiv.innerHTML = `<span class="day-number">${item.day}</span>`;
+            
+            dayDiv.addEventListener('click', () => {
+                if (!canOpen) {
+                    alert(`🎄 Patience ! Cette case s'ouvrira le ${item.day} décembre ! 🎄`);
+                    return;
+                }
+                
+                // Marquer comme ouvert
+                if (!openedDays.includes(item.day)) {
+                    openedDays.push(item.day);
+                    try {
+                        localStorage.setItem('adventOpened', JSON.stringify(openedDays));
+                    } catch(e) {
+                        console.log("Erreur sauvegarde calendrier");
+                    }
+                    dayDiv.classList.add('opened');
+                }
+                
+                // Fermer le calendrier
+                adventCalendar.classList.remove('open');
+                overlay.classList.remove('show');
+                
+                // Afficher le groupe du jour
+                showAdventBand(item.band, item.genre, item.day);
+            });
+            
+            adventGrid.appendChild(dayDiv);
+        });
+    }
+
+    // Afficher le groupe du jour
+    function showAdventBand(bandName, genreName, day) {
+        const band = bands.find(b => b.name === bandName);
+        if (!band) return;
+        
+        // Réinitialiser les filtres
+        searchBar.value = '';
+        genreFilter.value = 'allGenres';
+        paysFilter.value = 'allPays';
+        anneeFilter.value = 'allAnnees';
+        statusFilter.value = 'allStatus';
+        
+        if (showingFavorites) {
+            showingFavorites = false;
+            favoritesBtn.textContent = '⭐ Mes favoris';
+            favoritesBtn.style.background = '';
+        }
+        
+        // Afficher tous les groupes
+        displayBands();
+        
+        // Trouver et scroller vers le groupe
+        setTimeout(() => {
+            const bandDivs = document.querySelectorAll('.band');
+            for (let i = 0; i < bandDivs.length; i++) {
+                if (bandDivs[i].querySelector('strong').textContent === bandName) {
+                    bandDivs[i].scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    const info = bandDivs[i].querySelector('.info');
+                    info.style.display = 'block';
+                    
+                    // Effet de highlight
+                    bandDivs[i].style.boxShadow = '0 0 30px rgba(255, 215, 0, 0.9)';
+                    bandDivs[i].style.transform = 'scale(1.05)';
+                    
+                    setTimeout(() => {
+                        bandDivs[i].style.boxShadow = '';
+                        bandDivs[i].style.transform = '';
+                    }, 2000);
+                    
+                    break;
+                }
+            }
+        }, 100);
+        
+        // Message personnalisé
+        alert(`🎄 Jour ${day} : Découvrez ${bandName} ! 🎄\n\nGenre : ${genreName}\n\nBonne écoute ! 🎅🤘`);
+    }
+
+    // Initialiser le calendrier
+    initAdventCalendar();
+
+    // Gestion ouverture/fermeture du calendrier
+    const adventBtn = document.getElementById('adventBtn');
+    const adventCalendar = document.getElementById('adventCalendar');
+    const closeAdvent = document.getElementById('closeAdvent');
+    
+    // Créer l'overlay
+    const overlay = document.createElement('div');
+    overlay.className = 'advent-overlay';
+    document.body.appendChild(overlay);
+    
+    if (adventBtn) {
+        adventBtn.addEventListener('click', () => {
+            adventCalendar.classList.add('open');
+            overlay.classList.add('show');
+        });
+    }
+    
+    if (closeAdvent) {
+        closeAdvent.addEventListener('click', () => {
+            adventCalendar.classList.remove('open');
+            overlay.classList.remove('show');
+        });
+    }
+    
+    // Fermer en cliquant sur l'overlay
+    overlay.addEventListener('click', () => {
+        adventCalendar.classList.remove('open');
+        overlay.classList.remove('show');
+    });
+
     // Système de favoris
     let favorites = [];
     
