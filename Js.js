@@ -623,6 +623,357 @@ document.addEventListener("DOMContentLoaded", () => {
     anecdote: "Le nom de Kim Dracula est une référence à la chanson de Deftones Kimdracula de leur album Saturday Night Wrist.",
     membres: ["Samuel Wellings"]
 },
+     { 
+    name: "Avenged Sevenfold", 
+    origin: "Huntington Beach, USA", 
+    year: 1999,
+    yearEnd: null,
+    genre: ["Metalcore", "Heavy Metal"],
+    anecdote: "Nightmare est devenu disque d'or. Le batteur The Rev est décédé en 2009, un événement marquant pour le groupe.",
+    membres: ["M. Shadows", "Synyster Gates", "Zacky Vengeance", "Johnny Christ", "Brooks Wackerman"]
+},
+{ 
+    name: "Trivium", 
+    origin: "Orlando, USA", 
+    year: 1999,
+    yearEnd: null,
+    genre: ["Metalcore", "Thrash Metal"],
+    anecdote: "Matt Heafy avait seulement 17 ans lors de la sortie d'Ember to Inferno. Influencés par Metallica et In Flames.",
+    membres: ["Matt Heafy", "Corey Beaulieu", "Paolo Gregoletto", "Alex Bent"]
+},
+{ 
+    name: "Babymetal", 
+    origin: "Tokyo, Japon", 
+    year: 2010,
+    yearEnd: null,
+    genre: ["Kawaii Metal", "Non Qualifiable"],
+    anecdote: "Mélangent J-Pop et metal extrême. Ont ouvert pour Metallica et Red Hot Chili Peppers. Phénomène mondial unique.",
+    membres: ["Su-metal", "Moametal"]
+},
+{ 
+    name: "Bring Me The Horizon", 
+    origin: "Sheffield, Royaume-Uni", 
+    year: 2004,
+    yearEnd: null,
+    genre: ["Metalcore", "Alternative Metal", "Non Qualifiable"],
+    anecdote: "Ont évolué du deathcore vers un son électronique/alternatif. Sempiternal a marqué leur transformation.",
+    membres: ["Oliver Sykes", "Lee Malia", "Matt Kean", "Matt Nicholls", "Jordan Fish"]
+},
+{ 
+    name: "Parkway Drive", 
+    origin: "Byron Bay, Australie", 
+    year: 2003,
+    yearEnd: null,
+    genre: "Metalcore",
+    anecdote: "Originaires d'une petite ville côtière australienne. Horizons est considéré comme un classique du metalcore moderne.",
+    membres: ["Winston McCall", "Jeff Ling", "Luke Kilpatrick", "Jia O'Connor", "Ben Gordon"]
+},
+{ 
+    name: "Alestorm", 
+    origin: "Perth, Écosse", 
+    year: 2004,
+    yearEnd: null,
+    genre: "Pirate Metal",
+    anecdote: "Seul vrai groupe de pirate metal. Tous leurs textes parlent de pirates, de rhum et d'aventures en mer !",
+    membres: ["Christopher Bowes", "Máté Bodor", "Gareth Murdock", "Peter Alcorn"]
+},
+{ 
+    name: "Devin Townsend Project", 
+    origin: "Vancouver, Canada", 
+    year: 2008,
+    yearEnd: 2018,
+    genre: ["Progressive Metal", "Avant-Garde Metal"],
+    anecdote: "Devin Townsend est un génie musical expérimental. A travaillé avec Steve Vai à 19 ans. Discographie immense et variée.",
+    membres: ["Devin Townsend", "Dave Young", "Brian Waddell", "Ryan Van Poederooyen", "Mike St-Jean"]
+},
+{ 
+    name: "Animals As Leaders", 
+    origin: "Washington D.C., USA", 
+    year: 2007,
+    yearEnd: null,
+    genre: ["Djent", "Progressive Metal"],
+    anecdote: "Groupe instrumental de djent progressif. Tosin Abasi est considéré comme l'un des meilleurs guitaristes actuels.",
+    membres: ["Tosin Abasi", "Javier Reyes", "Matt Garstka"]
+},
+{ 
+    name: "Alcest", 
+    origin: "Bagnols-sur-Cèze, France", 
+    year: 2000,
+    yearEnd: null,
+    genre: ["Blackgaze", "Post-Black Metal"],
+    anecdote: "Pionniers du blackgaze, mélange de black metal et shoegaze. Neige crée des paysages sonores oniriques.",
+    membres: ["Neige", "Winterhalter", "Indria Saray"]
+},
+{ 
+    name: "Deafheaven", 
+    origin: "San Francisco, USA", 
+    year: 2010,
+    yearEnd: null,
+    genre: ["Blackgaze", "Post-Black Metal"],
+    anecdote: "Sunbather a révolutionné le black metal avec des influences shoegaze et post-rock. Pochette rose controversée !",
+    membres: ["George Clarke", "Kerry McCoy", "Daniel Tracy", "Shiv Mehra", "Chris Johnson"]
+},
+{ 
+    name: "Converge", 
+    origin: "Salem, USA", 
+    year: 1990,
+    yearEnd: null,
+    genre: ["Mathcore", "Metalcore"],
+    anecdote: "Pionniers du mathcore et du metalcore chaotique. Jane Doe est un album culte du genre.",
+    membres: ["Jacob Bannon", "Kurt Ballou", "Nate Newton", "Ben Koller"]
+},
+{ 
+    name: "The Dillinger Escape Plan", 
+    origin: "Morris Plains, USA", 
+    year: 1997,
+    yearEnd: 2017,
+    genre: ["Mathcore", "Progressive Metal"],
+    anecdote: "Mathcore technique extrême. Leurs concerts étaient chaotiques avec des acrobaties dangereuses. Séparés en 2017.",
+    membres: ["Greg Puciato", "Ben Weinman", "Liam Wilson", "Billy Rymer", "James Love"]
+},
+{ 
+    name: "Killswitch Engage", 
+    origin: "Westfield, USA", 
+    year: 1999,
+    yearEnd: null,
+    genre: "Melodic Metalcore",
+    anecdote: "Ont popularisé le metalcore mélodique. Alive or Just Breathing est un classique. Howard Jones puis Jesse Leach au chant.",
+    membres: ["Jesse Leach", "Adam Dutkiewicz", "Joel Stroetzel", "Mike D'Antonio", "Justin Foley"]
+},
+{ 
+    name: "As I Lay Dying", 
+    origin: "San Diego, USA", 
+    year: 2000,
+    yearEnd: null,
+    genre: "Metalcore",
+    anecdote: "An Ocean Between Us a atteint le top 10 du Billboard. Histoire controversée avec l'emprisonnement du chanteur.",
+    membres: ["Tim Lambesis", "Phil Sgrosso", "Nick Hipa", "Josh Gilbert", "Jordan Mancino"]
+},
+{ 
+    name: "Architects", 
+    origin: "Brighton, Royaume-Uni", 
+    year: 2004,
+    yearEnd: null,
+    genre: ["Metalcore", "Progressive Metalcore"],
+    anecdote: "Tom Searle, guitariste fondateur, est décédé d'un cancer en 2016. Holy Hell est un hommage poignant.",
+    membres: ["Sam Carter", "Dan Searle", "Alex Dean", "Adam Christianson", "Josh Middleton"]
+},
+{ 
+    name: "Periphery", 
+    origin: "Washington D.C., USA", 
+    year: 2005,
+    yearEnd: null,
+    genre: ["Djent", "Progressive Metal"],
+    anecdote: "Misha Mansoor a créé le terme 'djent'. Groupe instrumental technique avec 3 guitaristes.",
+    membres: ["Spencer Sotelo", "Misha Mansoor", "Jake Bowen", "Mark Holcomb", "Matt Halpern"]
+},
+{ 
+    name: "Leprous", 
+    origin: "Notodden, Norvège", 
+    year: 2001,
+    yearEnd: null,
+    genre: ["Progressive Metal", "Avant-Garde Metal"],
+    anecdote: "Einar Solberg a une voix unique. Évoluent constamment, du prog metal vers des sons plus expérimentaux.",
+    membres: ["Einar Solberg", "Tor Oddmund Suhrke", "Robin Ognedal", "Simen Børven", "Baard Kolstad"]
+},
+{ 
+    name: "Ne Obliviscaris", 
+    origin: "Melbourne, Australie", 
+    year: 2003,
+    yearEnd: null,
+    genre: ["Progressive Death Metal", "Symphonic Metal"],
+    anecdote: "Utilisent un violon dans du death metal progressif. Morceaux de 10-15 minutes avec une complexité extrême.",
+    membres: ["Xenoyr", "Tim Charles", "Matt Klavins", "Martino Garattoni", "Dan Presland"]
+},
+{ 
+    name: "Godflesh", 
+    origin: "Birmingham, Royaume-Uni", 
+    year: 1988,
+    yearEnd: null,
+    genre: ["Industrial Metal", "Post-Metal"],
+    anecdote: "Pionniers du metal industriel avec drum machines. Streetcleaner est un album fondateur ultra-lourd.",
+    membres: ["Justin Broadrick", "Ben Green"]
+},
+{ 
+    name: "Neurosis", 
+    origin: "Oakland, USA", 
+    year: 1985,
+    yearEnd: null,
+    genre: ["Post-Metal", "Sludge Metal"],
+    anecdote: "Créateurs du post-metal atmosphérique. Times of Grace a défini leur son apocalyptique et contemplatif.",
+    membres: ["Scott Kelly", "Steve Von Till", "Noah Landis", "Dave Edwardson", "Jason Roeder"]
+},
+{ 
+    name: "Isis", 
+    origin: "Boston, USA", 
+    year: 1997,
+    yearEnd: 2010,
+    genre: ["Post-Metal", "Sludge Metal"],
+    anecdote: "Oceanic est un chef-d'œuvre du post-metal. Séparés en 2010 après une carrière influente.",
+    membres: ["Aaron Turner", "Michael Gallagher", "Bryant Clifford Meyer", "Jeff Caxide", "Aaron Harris"]
+},
+{ 
+    name: "Cult of Luna", 
+    origin: "Umeå, Suède", 
+    year: 1998,
+    yearEnd: null,
+    genre: ["Post-Metal", "Sludge Metal"],
+    anecdote: "Post-metal atmosphérique suédois. Mariner avec Julie Christmas est un album concept sur l'espace.",
+    membres: ["Johannes Persson", "Fredrik Kihlberg", "Thomas Hedlund", "Andreas Johansson", "Magnus Lindberg"]
+},
+{ 
+    name: "Agalloch", 
+    origin: "Portland, USA", 
+    year: 1995,
+    yearEnd: 2016,
+    genre: ["Folk Metal", "Post-Black Metal", "Doom Metal"],
+    anecdote: "Mélange unique de folk, doom et black metal atmosphérique. The Mantle est un album culte. Séparés en 2016.",
+    membres: ["John Haughm", "Don Anderson", "Jason Walton", "Aesop Dekker"]
+},
+{ 
+    name: "Therion", 
+    origin: "Upplands Väsby, Suède", 
+    year: 1987,
+    yearEnd: null,
+    genre: ["Symphonic Metal", "Opera Metal"],
+    anecdote: "Pionniers du metal symphonique avec chœurs opératiques. Ont introduit l'opéra dans le death metal.",
+    membres: ["Christofer Johnsson", "Thomas Vikström", "Lori Lewis", "Christian Vidal", "Nalle Påhlsson"]
+},
+{ 
+    name: "Sepultura", 
+    origin: "Belo Horizonte, Brésil", 
+    year: 1984,
+    yearEnd: null,
+    genre: ["Thrash Metal", "Groove Metal"],
+    anecdote: "Roots a incorporé des percussions tribales brésiliennes. Départ de Max Cavalera en 1996 a créé Soulfly.",
+    membres: ["Derrick Green", "Andreas Kisser", "Paulo Jr.", "Eloy Casagrande"]
+},
+{ 
+    name: "Soulfly", 
+    origin: "Phoenix, USA", 
+    year: 1997,
+    yearEnd: null,
+    genre: ["Groove Metal", "Nu Metal"],
+    anecdote: "Créé par Max Cavalera après Sepultura. Mélange thrash, groove et influences tribales du monde entier.",
+    membres: ["Max Cavalera", "Marc Rizzo", "Mike Leon", "Zyon Cavalera"]
+},
+{ 
+    name: "Machine Head", 
+    origin: "Oakland, USA", 
+    year: 1991,
+    yearEnd: null,
+    genre: ["Groove Metal", "Thrash Metal"],
+    anecdote: "Burn My Eyes s'est vendu à 400 000 exemplaires. The Blackening est considéré comme leur chef-d'œuvre.",
+    membres: ["Robb Flynn", "Wacław Kiełtyka", "Jared MacEachern", "Matt Alston"]
+},
+{ 
+    name: "Children of Bodom", 
+    origin: "Espoo, Finlande", 
+    year: 1993,
+    yearEnd: 2019,
+    genre: ["Melodic Death Metal", "Power Metal"],
+    anecdote: "Alexi Laiho était un virtuose. Mélange unique de death mélodique et power metal. Séparés en 2019, Alexi décédé en 2020.",
+    membres: ["Alexi Laiho", "Jaska Raatikainen", "Henkka Seppälä", "Janne Wirman", "Daniel Freyberg"]
+},
+{ 
+    name: "In Flames", 
+    origin: "Göteborg, Suède", 
+    year: 1990,
+    yearEnd: null,
+    genre: ["Melodic Death Metal", "Alternative Metal"],
+    anecdote: "Pionniers du son de Göteborg. Ont évolué vers un son plus moderne et alternatif, divisant les fans.",
+    membres: ["Anders Fridén", "Björn Gelotte", "Chris Broderick", "Bryce Paul", "Tanner Wayne"]
+},
+{ 
+    name: "Carcass", 
+    origin: "Liverpool, Royaume-Uni", 
+    year: 1985,
+    yearEnd: null,
+    genre: ["Melodic Death Metal", "Grindcore"],
+    anecdote: "Pionniers du goregrind puis du melodic death. Heartwork a défini le melodic death metal en 1993.",
+    membres: ["Jeff Walker", "Bill Steer", "Daniel Wilding", "Tom Draper"]
+},
+{ 
+    name: "Summoning", 
+    origin: "Vienne, Autriche", 
+    year: 1993,
+    yearEnd: null,
+    genre: ["Atmospheric Black Metal", "Epic Metal"],
+    anecdote: "100% inspiré par Tolkien. Black metal atmosphérique épique avec synthés. Pas de concerts live.",
+    membres: ["Silenius", "Protector"]
+},
+{ 
+    name: "Wolves in the Throne Room", 
+    origin: "Olympia, USA", 
+    year: 2002,
+    yearEnd: null,
+    genre: ["Atmospheric Black Metal", "Post-Black Metal"],
+    anecdote: "Black metal écologique et atmosphérique. Vivent dans une ferme isolée de l'État de Washington.",
+    membres: ["Aaron Weaver", "Nathan Weaver", "Kody Keyworth"]
+},
+{ 
+    name: "Mgła", 
+    origin: "Cracovie, Pologne", 
+    year: 2000,
+    yearEnd: null,
+    genre: "Black Metal",
+    anecdote: "Black metal polonais nihiliste. Identités secrètes, pas d'interviews. Exercises in Futility est un chef-d'œuvre moderne.",
+    membres: ["M.", "Darkside"]
+},
+{ 
+    name: "Marduk", 
+    origin: "Norrköping, Suède", 
+    year: 1990,
+    yearEnd: null,
+    genre: "Black Metal",
+    anecdote: "Black metal suédois ultra-rapide et agressif. Thèmes de guerre, satanisme et anti-christianisme.",
+    membres: ["Mortuus", "Morgan Håkansson", "Devo", "Simon Schilling"]
+},
+{ 
+    name: "1349", 
+    origin: "Oslo, Norvège", 
+    year: 1997,
+    yearEnd: null,
+    genre: "Black Metal",
+    anecdote: "Nommés d'après l'année de la peste noire en Norvège. Black metal norvégien rapide et technique.",
+    membres: ["Ravn", "Archaon", "Seidemann", "Tor Risdal Stavenes"]
+},
+{ 
+    name: "Dying Fetus", 
+    origin: "Upper Marlboro, USA", 
+    year: 1991,
+    yearEnd: null,
+    genre: ["Brutal Death Metal", "Grindcore"],
+    anecdote: "Death metal technique brutal avec des breakdowns. Destroy the Opposition est un classique du genre.",
+    membres: ["John Gallagher", "Sean Beasley", "Trey Williams"]
+},
+{ 
+    name: "Nile", 
+    origin: "Greenville, USA", 
+    year: 1993,
+    yearEnd: null,
+    genre: ["Technical Death Metal", "Brutal Death Metal"],
+    anecdote: "Thèmes égyptologiques. Death metal technique ultra-rapide. Utilisent des instruments du Moyen-Orient.",
+    membres: ["Karl Sanders", "Brian Kingsland", "Dan Vadim Von", "George Kollias"]
+},
+{ 
+    name: "Suffocation", 
+    origin: "Long Island, USA", 
+    year: 1988,
+    yearEnd: null,
+    genre: ["Brutal Death Metal", "Technical Death Metal"],
+    anecdote: "Pionniers du brutal death et du slam. Effigy of the Forgotten a défini le genre en 1991.",
+    membres: ["Frank Mullen", "Terrance Hobbs", "Charlie Errigo", "Derek Boyer", "Eric Morotti"]
+},
+{ 
+    name: "Anaal Nathrakh", 
+    origin: "Birmingham, Royaume-Uni", 
+    year: 1999,
+    yearEnd: 2022,
+    genre: ["Extreme Metal", "Industrial Black Metal", "Grindcore"],
+    anecdote: "Mélange chaotique de black, grind et indus. Nom tiré d'Excalibur. Séparés en 2022.",
+    membres: ["V.I.T.R.I.O.L.", "Irrumator"]
+},
 
     ];
 
@@ -794,4 +1145,5 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     displayBands();
+
 });
