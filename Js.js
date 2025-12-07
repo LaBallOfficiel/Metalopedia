@@ -330,9 +330,10 @@ bands.sort((a, b) => a.name.localeCompare(b.name));
     const themeDark = document.getElementById('themeDark');
     const themeLight = document.getElementById('themeLight');
     const themeColor = document.getElementById('themeColor');
+    const themeNoel = document.getElementById('themeNoel');
     const body = document.body;
 
-    if (themeDark && themeLight && themeColor) {
+    if (themeDark && themeLight && themeColor && themeNoel) {
         console.log("Boutons de thème trouvés !");
 
         try {
@@ -341,7 +342,8 @@ bands.sort((a, b) => a.name.localeCompare(b.name));
             document.querySelectorAll('.theme-btn').forEach(btn => btn.classList.remove('active'));
             if (savedTheme === 'dark') themeDark.classList.add('active');
             else if (savedTheme === 'light') themeLight.classList.add('active');
-            else themeColor.classList.add('active');
+            else if (savedTheme === 'color') themeColor.classList.add('active');
+            else if (savedTheme === 'noel') themeNoel.classList.add('active');
         } catch(e) {
             console.log("Erreur chargement thème:", e);
         }
@@ -377,6 +379,18 @@ bands.sort((a, b) => a.name.localeCompare(b.name));
             themeColor.classList.add('active');
             try {
                 localStorage.setItem('theme', 'color');
+            } catch(e) {
+                console.log("localStorage non disponible");
+            }
+        });
+
+        themeNoel.addEventListener('click', () => {
+            console.log("Thème Noël cliqué");
+            body.className = 'theme-noel';
+            document.querySelectorAll('.theme-btn').forEach(btn => btn.classList.remove('active'));
+            themeNoel.classList.add('active');
+            try {
+                localStorage.setItem('theme', 'noel');
             } catch(e) {
                 console.log("localStorage non disponible");
             }
