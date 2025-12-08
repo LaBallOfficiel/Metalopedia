@@ -1637,4 +1637,301 @@
     anecdote: "Le groupe a été formé par quatre amies du lycée en raison de leur admiration commune pour Maximum the Hormone, dans le cadre des activités de leur club de musique légère.",
     membres: ["Yukina", "Matsuri", "Hettsu"]
 },
+{ 
+    name: "A Day to Remember", 
+    origin: "Ocala, USA", 
+    year: 2003,
+    yearEnd: null,
+    genre: ["Metalcore", "Pop Punk"],
+    anecdote: "Mélangent metalcore et pop punk de manière unique. Homesick est un album culte qui a défini leur son hybride.",
+    membres: ["Jeremy McKinnon", "Neil Westfall", "Josh Woodard", "Alex Shelnutt", "Mike Perez"]
+},
+{ 
+    name: "Ankor", 
+    origin: "Tarragone, Espagne", 
+    year: 2003,
+    yearEnd: null,
+    genre: ["Metalcore", "Alternative Metal"],
+    anecdote: "Groupe espagnol avec Jessie Williams au chant. Mélangent metalcore moderne et mélodies électroniques.",
+    membres: ["Jessie Williams", "Julio López", "Fito Martínez", "David Romeu"]
+},
+{ 
+    name: "Asava", 
+    origin: "Espagne", 
+    year: 2010,
+    yearEnd: null,
+    genre: ["Metalcore", "Deathcore"],
+    anecdote: "Groupe espagnol émergent de la scène metalcore européenne. Style moderne et agressif.",
+    membres: ["Information limitée"]
+},
+{ 
+    name: "Avatar", 
+    origin: "Göteborg, Suède", 
+    year: 2001,
+    yearEnd: null,
+    genre: ["Death Metal", "Groove Metal"],
+    anecdote: "Johannes Eckerström est connu pour son maquillage de clown terrifiant. Spectacles théâtraux intenses.",
+    membres: ["Johannes Eckerström", "Jonas Jarlsby", "Tim Öhrström", "Henrik Sandelin", "John Alfredsson"]
+},
+{ 
+    name: "Bad Omens", 
+    origin: "Richmond, USA", 
+    year: 2015,
+    yearEnd: null,
+    genre: ["Metalcore", "Alternative Metal"],
+    anecdote: "Finding God Before God Finds Me a propulsé leur carrière. Son moderne mêlant metalcore et électronique.",
+    membres: ["Noah Sebastian", "Joakim Karlsson", "Nick Ruffilo", "Nick Folio"]
+},
+{ 
+    name: "Black Coast", 
+    origin: "Birmingham, Royaume-Uni", 
+    year: 2014,
+    yearEnd: null,
+    genre: ["Metalcore", "Electronic Metal"],
+    anecdote: "Fusionnent metalcore et EDM de manière unique. Charlie Hewitt apporte une énergie électronique intense.",
+    membres: ["Charlie Hewitt", "Dan Mackie", "Lewis Richards"]
+},
+{ 
+    name: "Bury Tomorrow", 
+    origin: "Southampton, Royaume-Uni", 
+    year: 2006,
+    yearEnd: null,
+    genre: "Metalcore",
+    anecdote: "Piliers du metalcore britannique moderne. Runes a consolidé leur statut dans la scène européenne.",
+    membres: ["Daniel Winter-Bates", "Jason Cameron", "Kristan Dawson", "Davyd Winter-Bates", "Adam Jackson"]
+},
+{ 
+    name: "Drowning Pool", 
+    origin: "Dallas, USA", 
+    year: 1996,
+    yearEnd: null,
+    genre: ["Nu Metal", "Alternative Metal"],
+    anecdote: "Bodies est devenu un hymne du nu metal. Dave Williams, chanteur original, est décédé en 2002.",
+    membres: ["Jasen Moreno", "C.J. Pierce", "Stevie Benton", "Mike Luce"]
+},
+{ 
+    name: "Electric Callboy", 
+    origin: "Castrop-Rauxel, Allemagne", 
+    year: 2010,
+    yearEnd: null,
+    genre: ["Metalcore", "Electronicore"],
+    anecdote: "Anciennement Eskimo Callboy. Mélangent metalcore, EDM et humour. Hypa Hypa est devenu viral.",
+    membres: ["Nico Sallach", "Kevin Ratajczak", "Pascal Schillo", "Daniel Haniß", "David Karl", "Daniel Klossek"]
+},
+{ 
+    name: "Falling In Reverse", 
+    origin: "Las Vegas, USA", 
+    year: 2008,
+    yearEnd: null,
+    genre: ["Post-Hardcore", "Metalcore"],
+    anecdote: "Créé par Ronnie Radke après Escape the Fate. Popular Monster a explosé sur les réseaux sociaux.",
+    membres: ["Ronnie Radke", "Max Georgiev", "Christian Thompson", "Tyler Burgess"]
+},
+{ 
+    name: "Five Finger Death Punch", 
+    origin: "Las Vegas, USA", 
+    year: 2005,
+    yearEnd: null,
+    genre: ["Groove Metal", "Alternative Metal"],
+    anecdote: "L'un des groupes metal les plus populaires des années 2010. The Wrong Side of Heaven est un hymne.",
+    membres: ["Ivan Moody", "Zoltan Bathory", "Jason Hook", "Chris Kael", "Charlie Engen"]
+},
+{ 
+    name: "Fox Lake", 
+    origin: "France", 
+    year: 2015,
+    yearEnd: null,
+    genre: ["Metalcore", "Post-Hardcore"],
+    anecdote: "Groupe français émergent de la scène metalcore. Style émotionnel et mélodique.",
+    membres: ["Information limitée"]
+},
+{ 
+    name: "I Prevail", 
+    origin: "Southfield, USA", 
+    year: 2013,
+    yearEnd: null,
+    genre: ["Metalcore", "Alternative Metal"],
+    anecdote: "Leur reprise de Blank Space de Taylor Swift les a rendus célèbres. Trauma a été un succès massif.",
+    membres: ["Brian Burkheiser", "Eric Vanlerberghe", "Steve Menoian", "Dylan Bowman", "Gabe Helguera"]
+},
+{ 
+    name: "Ignea", 
+    origin: "Kiev, Ukraine", 
+    year: 2013,
+    yearEnd: null,
+    genre: ["Symphonic Metal", "Oriental Metal"],
+    anecdote: "Mélangent metal symphonique et instruments orientaux. Helle Bogh a une voix operatique puissante.",
+    membres: ["Helle Bogh", "Yevhen Zhytnyuk", "Alex Smirnov", "Dmytro Vasilyev"]
+},
+{ 
+    name: "Jinjer", 
+    origin: "Donetsk, Ukraine", 
+    year: 2009,
+    yearEnd: null,
+    genre: ["Progressive Metalcore", "Groove Metal"],
+    anecdote: "Tatiana Shmayluk est reconnue pour sa technique vocale unique. Pisces (Live Session) est devenu viral.",
+    membres: ["Tatiana Shmayluk", "Roman Ibramkhalilov", "Eugene Abdukhanov", "Vladislav Ulasevich"]
+},
+{ 
+    name: "Linkin Park", 
+    origin: "Los Angeles, USA", 
+    year: 1996,
+    yearEnd: null,
+    genre: ["Nu Metal", "Alternative Rock"],
+    anecdote: "Hybrid Theory est l'un des albums les plus vendus du 21e siècle. Chester Bennington décédé en 2017.",
+    membres: ["Mike Shinoda", "Brad Delson", "Dave Farrell", "Joe Hahn", "Rob Bourdon", "Emily Armstrong"]
+},
+{ 
+    name: "Malevolence", 
+    origin: "Sheffield, Royaume-Uni", 
+    year: 2010,
+    yearEnd: null,
+    genre: ["Metalcore", "Hardcore"],
+    anecdote: "Metalcore brutal britannique. Malicious Intent a consolidé leur réputation de groupe sans compromis.",
+    membres: ["Alex Taylor", "Josh Baines", "Konan Hall", "Wilkie Nicholson", "Charlie Thorpe"]
+},
+{ 
+    name: "Marilyn Manson", 
+    origin: "Fort Lauderdale, USA", 
+    year: 1989,
+    yearEnd: null,
+    genre: ["Industrial Metal", "Shock Rock"],
+    anecdote: "Figure controversée du rock. Antichrist Superstar a choqué l'Amérique dans les années 90.",
+    membres: ["Marilyn Manson", "Tyler Bates", "Juan Alderete", "Brandon Pertzborn"]
+},
+{ 
+    name: "Metalocalypse: Dethklok", 
+    origin: "USA", 
+    year: 2006,
+    yearEnd: null,
+    genre: ["Melodic Death Metal", "Comedy Metal"],
+    anecdote: "Groupe fictif de la série Metalocalypse créé par Brendon Small. Ont sorti de vrais albums à succès.",
+    membres: ["Brendon Small", "Gene Hoglan", "Bryan Beller"]
+},
+{ 
+    name: "Nothing More", 
+    origin: "San Antonio, USA", 
+    year: 2003,
+    yearEnd: null,
+    genre: ["Alternative Metal", "Progressive Metal"],
+    anecdote: "Go to War a été nominé aux Grammy. Connus pour leurs instruments faits maison sur scène.",
+    membres: ["Jonny Hawkins", "Mark Vollelunga", "Daniel Oliver", "Ben Anderson"]
+},
+{ 
+    name: "Orbit Culture", 
+    origin: "Eksjö, Suède", 
+    year: 2013,
+    yearEnd: null,
+    genre: ["Melodic Death Metal", "Groove Metal"],
+    anecdote: "Death metal mélodique suédois moderne. Nija a propulsé leur carrière internationale.",
+    membres: ["Niklas Karlsson", "Richard Hansson", "Christopher Wallerstedt", "Markus Bladh"]
+},
+{ 
+    name: "Opal In Sky", 
+    origin: "France", 
+    year: 2016,
+    yearEnd: null,
+    genre: ["Metalcore", "Progressive Metalcore"],
+    anecdote: "Groupe français de metalcore progressif. Style technique et atmosphérique.",
+    membres: ["Information limitée"]
+},
+{ 
+    name: "Paleface Swiss", 
+    origin: "Zurich, Suisse", 
+    year: 2017,
+    yearEnd: null,
+    genre: ["Beatdown Hardcore", "Deathcore"],
+    anecdote: "Beatdown hardcore suisse ultra-violent. Connus pour leur brutalité sans compromis et leur énergie live.",
+    membres: ["Zelli", "Yves", "Marc", "Casu", "Tommy"]
+},
+{ 
+    name: "Persefone", 
+    origin: "Andorre", 
+    year: 2001,
+    yearEnd: null,
+    genre: ["Progressive Death Metal", "Technical Death Metal"],
+    anecdote: "Death metal progressif technique d'Andorre. Spiritual Migration est un chef-d'œuvre du genre.",
+    membres: ["Marc Martins", "Filipe Baldaia", "Miguel Espinosa", "Toni Mestre", "Sergi Verdeguer"]
+},
+{ 
+    name: "Pop Evil", 
+    origin: "Grand Rapids, USA", 
+    year: 2001,
+    yearEnd: null,
+    genre: ["Hard Rock", "Alternative Metal"],
+    anecdote: "Hard rock américain moderne. Trenches et Footsteps sont devenus des hits rock radio.",
+    membres: ["Leigh Kakaty", "Dave Grahs", "Nick Fuelling", "Joey Walser", "Hayley Cramer"]
+},
+{ 
+    name: "Poppy", 
+    origin: "Los Angeles, USA", 
+    year: 2014,
+    yearEnd: null,
+    genre: ["Experimental Metal", "Nu Metal", "Non Qualifiable"],
+    anecdote: "Artiste expérimentale inclassable. I Disagree mélange pop, metal et avant-garde de manière unique.",
+    membres: ["Poppy"]
+},
+{ 
+    name: "Skillet", 
+    origin: "Memphis, USA", 
+    year: 1996,
+    yearEnd: null,
+    genre: ["Christian Rock", "Alternative Metal"],
+    anecdote: "Groupe de rock chrétien mainstream. Awake et Rise ont été certifiés multi-platine.",
+    membres: ["John Cooper", "Korey Cooper", "Jen Ledger", "Seth Morrison"]
+},
+{ 
+    name: "Slaughter to Prevail", 
+    origin: "Yekaterinburg, Russie", 
+    year: 2014,
+    yearEnd: null,
+    genre: ["Deathcore", "Brutal Death Metal"],
+    anecdote: "Alex Terrible est viral pour ses gutturaux extrêmes. Demolisher a explosé sur YouTube et TikTok.",
+    membres: ["Alex Terrible", "Jack Simmons", "Michael Petrov", "Evgeny Novikov"]
+},
+{ 
+    name: "Sleep Token", 
+    origin: "Londres, Royaume-Uni", 
+    year: 2016,
+    yearEnd: null,
+    genre: ["Progressive Metal", "Alternative Metal", "Non Qualifiable"],
+    anecdote: "Identités anonymes avec masques. Mélangent djent, R&B et metal progressif. Concept mystérieux autour de 'Sleep'.",
+    membres: ["Vessel", "II", "III", "IV"]
+},
+{ 
+    name: "Spiritbox", 
+    origin: "Victoria, Canada", 
+    year: 2017,
+    yearEnd: null,
+    genre: ["Metalcore", "Progressive Metal"],
+    anecdote: "Courtney LaPlante alterne entre voix claire éthérée et screams puissants. Holy Roller est devenu viral.",
+    membres: ["Courtney LaPlante", "Mike Stringer", "Bill Crook", "Zev Rose"]
+},
+{ 
+    name: "Stone Sour", 
+    origin: "Des Moines, USA", 
+    year: 1992,
+    yearEnd: null,
+    genre: ["Alternative Metal", "Hard Rock"],
+    anecdote: "Projet parallèle de Corey Taylor (Slipknot). Through Glass est leur plus grand succès commercial.",
+    membres: ["Corey Taylor", "Josh Rand", "Johny Chow", "Roy Mayorga"]
+},
+{ 
+    name: "The Birthday Massacre", 
+    origin: "Londres, Canada", 
+    year: 1999,
+    yearEnd: null,
+    genre: ["Gothic Rock", "Industrial Metal", "Electronic Metal"],
+    anecdote: "Rock gothique synthwave avec influences metal. Esthétique dark et colorée unique.",
+    membres: ["Chibi", "Rainbow", "Falcore", "Nate Manor", "Owen Mackinder", "Rhim"]
+},
+{ 
+    name: "Ultra Vomit", 
+    origin: "Nantes, France", 
+    year: 1999,
+    yearEnd: null,
+    genre: ["Comedy Metal", "Thrash Metal"],
+    anecdote: "Groupe humoristique français culte. Parodient le metal avec talent. Objectif: Thunes est hilarant.",
+    membres: ["Nicolas Patra", "Matthieu Bausson", "Emmanuel Colombier", "Fabien Le Floch"]
+},
     ];
