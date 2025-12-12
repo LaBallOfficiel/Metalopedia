@@ -2005,5 +2005,5 @@
     genre: ["Power Metal", "Heavy Metal"],
     anecdote: "Collaboration entre membres de Gacharic Spin et Fuki (Unlucky Morpheus). Séparés en 2017.",
     membres: ["Fuki", "Hana", "Natsume", "Tomo-zo", "Oreo Reona"]
-},
+}
     ];
