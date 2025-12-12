@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Metalopedia</title>
+    <title>Melalopedia</title>
     <link rel="icon" type="image/png" href="icon.png">
     <link rel="stylesheet" href="Style.css">
 </head>
@@ -16,6 +16,7 @@
         <button id="themeLight" class="theme-btn">☀️ Clair</button>
         <button id="themeColor" class="theme-btn">🎨 Coloré</button>
         <button id="themeNoel" class="theme-btn">🎄 Noël</button>
+        <button id="themeStranger" class="theme-btn">🔦 Stranger Things</button>
     </div>
 </header>
 
@@ -53,6 +54,9 @@
 <!-- Bouton pour ouvrir le calendrier de l'Avent -->
 <button id="adventBtn" class="advent-btn">🎄</button>
 
+<!-- Bouton pour ouvrir le calendrier Stranger Things -->
+<button id="strangerBtn" class="stranger-btn">🔦</button>
+
 <!-- Calendrier de l'Avent -->
 <div id="adventCalendar" class="advent-calendar">
     <div class="advent-header">
@@ -60,6 +64,16 @@
         <button id="closeAdvent" class="close-advent">✕</button>
     </div>
     <div class="advent-grid" id="adventGrid"></div>
+</div>
+
+<!-- Calendrier Stranger Things -->
+<div id="strangerCalendar" class="stranger-calendar">
+    <div class="stranger-header">
+        <div class="stranger-title">STRANGER THINGS</div>
+        <div class="stranger-subtitle">Season 5 Countdown</div>
+        <button id="closeStranger" class="close-stranger">✕</button>
+    </div>
+    <div class="stranger-grid" id="strangerGrid"></div>
 </div>
 
 <div id="list"></div>

@@ -1,4 +1,13 @@
-body {
+.stranger-calendar.open {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* MODE PRODUCTION : Afficher uniquement en thème Stranger Things */
+body.theme-stranger .stranger-calendar {
+    display: block;
+}body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
@@ -230,6 +239,353 @@ body.theme-noel #countNumber {
 
 body.theme-noel .favorite-btn.active {
     filter: grayscale(0%) drop-shadow(0 0 5px #ffd700);
+}
+
+/* ========== THÈME STRANGER THINGS ========== */
+body.theme-stranger {
+    background: #000 !important;
+    color: #fff !important;
+    min-height: 100vh;
+    position: relative;
+    font-family: 'Courier New', monospace !important;
+}
+
+body.theme-stranger::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        repeating-linear-gradient(
+            0deg,
+            rgba(255, 0, 0, 0.03) 0px,
+            transparent 1px,
+            transparent 2px,
+            rgba(255, 0, 0, 0.03) 3px
+        );
+    pointer-events: none;
+    z-index: 1;
+    animation: scanlines 8s linear infinite;
+}
+
+@keyframes scanlines {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(4px); }
+}
+
+body.theme-stranger header {
+    background: #000 !important;
+    border-bottom: 3px solid #d32f2f !important;
+    box-shadow: 0 0 30px rgba(211, 47, 47, 0.5);
+    position: relative;
+    z-index: 2;
+}
+
+body.theme-stranger header > div:first-child {
+    color: #d32f2f;
+    text-shadow: 
+        0 0 10px rgba(211, 47, 47, 1),
+        0 0 20px rgba(211, 47, 47, 0.8),
+        0 0 30px rgba(211, 47, 47, 0.6);
+    font-family: 'Courier New', monospace;
+    letter-spacing: 8px;
+}
+
+body.theme-stranger .band {
+    background: linear-gradient(135deg, #1a0000 0%, #0d0d0d 100%) !important;
+    border: 2px solid #d32f2f !important;
+    color: #fff !important;
+    font-weight: 500;
+    box-shadow: 0 4px 15px rgba(211, 47, 47, 0.3);
+    position: relative;
+    z-index: 2;
+}
+
+body.theme-stranger .band:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 25px rgba(211, 47, 47, 0.6);
+    border-color: #ff5252;
+}
+
+body.theme-stranger .controls button,
+body.theme-stranger .controls select {
+    background: linear-gradient(135deg, #1a0000 0%, #0d0d0d 100%) !important;
+    color: #d32f2f !important;
+    border: 2px solid #d32f2f !important;
+    position: relative;
+    z-index: 2;
+    text-shadow: 0 0 5px rgba(211, 47, 47, 0.5);
+}
+
+body.theme-stranger .controls button:hover,
+body.theme-stranger .controls select:hover {
+    background: linear-gradient(135deg, #2d0000 0%, #1a1a1a 100%) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(211, 47, 47, 0.5);
+}
+
+body.theme-stranger .controls select option {
+    background: #1a0000 !important;
+    color: #d32f2f !important;
+}
+
+body.theme-stranger #searchBar {
+    background: rgba(26, 0, 0, 0.95) !important;
+    color: #fff !important;
+    border: 2px solid #d32f2f !important;
+    position: relative;
+    z-index: 2;
+}
+
+body.theme-stranger .info {
+    background: rgba(211, 47, 47, 0.1);
+    padding: 10px;
+    border-radius: 5px;
+    border-left: 3px solid #d32f2f;
+}
+
+body.theme-stranger .counter {
+    background: linear-gradient(135deg, #1a0000 0%, #0d0d0d 100%) !important;
+    color: #d32f2f !important;
+    font-weight: 600;
+    border: 2px solid #d32f2f !important;
+    box-shadow: 0 4px 15px rgba(211, 47, 47, 0.3);
+    position: relative;
+    z-index: 2;
+    text-shadow: 0 0 5px rgba(211, 47, 47, 0.5);
+}
+
+body.theme-stranger #countNumber {
+    color: #ff5252;
+    text-shadow: 0 0 10px rgba(255, 82, 82, 0.8);
+}
+
+body.theme-stranger .favorite-btn.active {
+    filter: grayscale(0%) drop-shadow(0 0 5px #d32f2f);
+}
+
+/* ========== BOUTON CALENDRIER STRANGER THINGS ========== */
+.stranger-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 90px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #1a0000 0%, #0d0d0d 100%);
+    border: 3px solid #d32f2f;
+    font-size: 2rem;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(211, 47, 47, 0.6);
+    z-index: 999;
+    display: none;
+    transition: all 0.3s;
+    animation: pulse-stranger 2s infinite;
+}
+
+/* MODE PRODUCTION : Afficher uniquement en thème Stranger Things du 25 déc au 1er jan */
+body.theme-stranger .stranger-btn {
+    display: block;
+}
+
+.stranger-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 30px rgba(211, 47, 47, 0.9);
+}
+
+.stranger-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 30px rgba(211, 47, 47, 0.9);
+}
+
+@keyframes pulse-stranger {
+    0%, 100% {
+        box-shadow: 0 4px 20px rgba(211, 47, 47, 0.6);
+    }
+    50% {
+        box-shadow: 0 6px 35px rgba(211, 47, 47, 1);
+    }
+}
+
+/* ========== CALENDRIER STRANGER THINGS ========== */
+.stranger-calendar {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    background: #000;
+    border: 3px solid #d32f2f;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 8px 40px rgba(211, 47, 47, 0.8);
+    z-index: 1001;
+    max-width: 500px;
+    width: 90%;
+    opacity: 0;
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+.stranger-calendar.open {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+body.theme-stranger .stranger-calendar {
+    display: block;
+}
+
+.stranger-header {
+    text-align: center;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.stranger-title {
+    font-family: 'Courier New', monospace;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #d32f2f;
+    margin-bottom: 5px;
+    text-shadow: 
+        0 0 10px rgba(211, 47, 47, 1),
+        0 0 20px rgba(211, 47, 47, 0.8),
+        0 0 30px rgba(211, 47, 47, 0.6);
+    letter-spacing: 8px;
+}
+
+.stranger-subtitle {
+    font-size: 0.9rem;
+    color: #ff5252;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.close-stranger {
+    position: absolute;
+    top: -5px;
+    right: 0;
+    background: none;
+    border: none;
+    color: #d32f2f;
+    font-size: 1.5rem;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+}
+
+.close-stranger:hover {
+    color: #ff5252;
+    transform: rotate(90deg);
+}
+
+.stranger-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.stranger-day {
+    aspect-ratio: 1;
+    background: linear-gradient(135deg, #1a0000 0%, #0d0d0d 100%);
+    border: 2px solid #d32f2f;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: bold;
+    color: #fff;
+    font-size: 1.2rem;
+    position: relative;
+    overflow: hidden;
+    font-family: 'Courier New', monospace;
+}
+
+.stranger-day::before {
+    content: "🔦";
+    position: absolute;
+    font-size: 1.5rem;
+    opacity: 0.2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.stranger-day .day-number {
+    position: relative;
+    z-index: 1;
+}
+
+.stranger-day:hover:not(.locked):not(.opened) {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(211, 47, 47, 0.8);
+    background: linear-gradient(135deg, #2d0000 0%, #1a1a1a 100%);
+}
+
+.stranger-day.locked {
+    background: linear-gradient(135deg, #0d0d0d 0%, #000 100%);
+    border-color: #555;
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.stranger-day.opened {
+    background: linear-gradient(135deg, #d32f2f 0%, #ff5252 100%);
+    border-color: #fff;
+    color: #000;
+    box-shadow: 0 0 15px rgba(211, 47, 47, 0.9);
+}
+
+.stranger-day.today {
+    animation: pulse-stranger-day 2s infinite;
+}
+
+@keyframes pulse-stranger-day {
+    0%, 100% {
+        box-shadow: 0 0 10px rgba(211, 47, 47, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 25px rgba(211, 47, 47, 1);
+    }
+}
+
+@media (max-width: 768px) {
+    .stranger-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+        bottom: 15px;
+        left: 75px;
+    }
+    
+    .stranger-calendar {
+        max-width: 95%;
+        padding: 15px;
+    }
+    
+    .stranger-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 6px;
+    }
+    
+    .stranger-day {
+        font-size: 1rem;
+    }
+    
+    .stranger-title {
+        font-size: 1.5rem;
+        letter-spacing: 4px;
+    }
 }
 
 /* ========== BOUTON CALENDRIER DE L'AVENT ========== */

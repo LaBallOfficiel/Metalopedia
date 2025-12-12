@@ -1934,4 +1934,76 @@
     anecdote: "Groupe humoristique français culte. Parodient le metal avec talent. Objectif: Thunes est hilarant.",
     membres: ["Nicolas Patra", "Matthieu Bausson", "Emmanuel Colombier", "Fabien Le Floch"]
 },
+{ 
+    name: "Band-Maid", 
+    origin: "Tokyo, Japon", 
+    year: 2013,
+    yearEnd: null,
+    genre: ["Hard Rock", "Heavy Metal", "J-Rock"],
+    anecdote: "Servantes de jour, rockstars de nuit ! Portent des tenues de maid café tout en jouant du hard rock technique.",
+    membres: ["Saiki Atsumi", "Miku Kobato", "Kanami Tōno", "Akane Hirose", "MISA"]
+},
+{ 
+    name: "Lovebites", 
+    origin: "Tokyo, Japon", 
+    year: 2016,
+    yearEnd: null,
+    genre: ["Power Metal", "Heavy Metal"],
+    anecdote: "Groupe féminin japonais de power metal. Virtuosité technique impressionnante et vitesse extrême.",
+    membres: ["Asami", "Midori", "Miyako", "Fami", "Haruna"]
+},
+{ 
+    name: "Nemophila", 
+    origin: "Tokyo, Japon", 
+    year: 2019,
+    yearEnd: null,
+    genre: ["Melodic Death Metal", "Metalcore"],
+    anecdote: "Groupe féminin japonais de melodic death metal. Mélangent puissance et technique avec une énergie explosive.",
+    membres: ["Mayu", "Saki", "Hazuki", "Haraguchi-san", "Tamu Murata"]
+},
+{ 
+    name: "Aldious", 
+    origin: "Osaka, Japon", 
+    year: 2008,
+    yearEnd: null,
+    genre: ["Heavy Metal", "Power Metal"],
+    anecdote: "Groupe féminin de heavy metal japonais. Pionnières du mouvement all-female metal au Japon.",
+    membres: ["R!N", "Yoshi", "Toki", "Sawa", "Marina"]
+},
+{ 
+    name: "Bridear", 
+    origin: "Fukuoka, Japon", 
+    year: 2011,
+    yearEnd: null,
+    genre: ["Heavy Metal", "Power Metal"],
+    anecdote: "Groupe féminin japonais de heavy metal mélodique. Énergie contagieuse et riffs accrocheurs.",
+    membres: ["Kimi", "Ayumi", "Haru", "Natsumi", "Moe"]
+},
+{ 
+    name: "Passcode", 
+    origin: "Osaka, Japon", 
+    year: 2014,
+    yearEnd: null,
+    genre: ["Electronicore", "Metalcore", "Idol Metal"],
+    anecdote: "Mélangent idol japonais, EDM et metalcore. Portent des masques électroniques sur scène.",
+    membres: ["Nao Minami", "Kaede Takashima", "Emily Arima", "Hinako Ōgami"]
+},
+{ 
+    name: "Broken By The Scream", 
+    origin: "Tokyo, Japon", 
+    year: 2015,
+    yearEnd: null,
+    genre: ["Metalcore", "Idol Metal", "Kawaii Metal"],
+    anecdote: "Idol metal japonais avec screams. Mélangent J-Pop, metalcore et esthétique kawaii.",
+    membres: ["Kagura", "Io", "Yae", "Kanako"]
+},
+{ 
+    name: "Doll$Boxx", 
+    origin: "Tokyo, Japon", 
+    year: 2012,
+    yearEnd: 2017,
+    genre: ["Power Metal", "Heavy Metal"],
+    anecdote: "Collaboration entre membres de Gacharic Spin et Fuki (Unlucky Morpheus). Séparés en 2017.",
+    membres: ["Fuki", "Hana", "Natsume", "Tomo-zo", "Oreo Reona"]
+},
     ];

@@ -51,6 +51,130 @@ bands.sort((a, b) => a.name.localeCompare(b.name));
 
     const statusFilter = document.getElementById("statusFilter");
 
+    // Calendrier Stranger Things - Du 25 décembre au 1er janvier
+    const strangerDays = [
+        { day: 25, type: "intro", message: "Bienvenue dans le compte à rebours de la Saison 5 !" },
+        { day: 26, type: "announce", message: "🎬 ANNONCE OFFICIELLE 🎬\n\nLa Saison 5 de Stranger Things sortira en 2025 !\n\nNetflix a confirmé que ce sera la saison finale de la série culte." },
+        { day: 27, type: "anecdote", message: "Le Demogorgon original était joué par deux acteurs en costume. Ses mouvements étaient chorégraphiés comme une danse pour rendre la créature plus fluide." },
+        { day: 28, type: "anecdote", message: "Millie Bobby Brown se rasait vraiment la tête pour la saison 1. Elle a porté une perruque pour les saisons suivantes." },
+        { day: 29, type: "anecdote", message: "Le générique d'introduction s'inspire directement des romans de Stephen King des années 80, notamment l'adaptation de 'Christine' (1983)." },
+        { day: 30, type: "anecdote", message: "Hawkins National Laboratory a été filmé dans une vraie centrale désaffectée en Géorgie. L'atmosphère terrifiante était naturelle !" },
+        { day: 31, type: "anecdote", message: "La chanson 'Running Up That Hill' de Kate Bush a connu une renaissance massive grâce à la saison 4, atteignant le top des charts 37 ans après sa sortie." },
+        { day: 1, type: "announce", message: "🎉 BONNE ANNÉE 2025 ! 🎉\n\nCette année marque le grand final de Stranger Things !\n\nLa Saison 5 arrive bientôt... Préparez-vous pour l'ultime bataille contre le Monde à l'Envers." }
+    ];
+
+    const strangerEmojis = ["🔦", "🎭", "🚲", "⚡", "🍔", "🎮", "📻", "🌲"];
+
+    // Initialiser le calendrier Stranger Things
+    function initStrangerCalendar() {
+        const strangerGrid = document.getElementById('strangerGrid');
+        if (!strangerGrid) return;
+
+        const today = new Date();
+        const currentMonth = today.getMonth(); // 11 = décembre, 0 = janvier
+        const currentDay = today.getDate();
+        
+        // MODE PRODUCTION : Les cases s'ouvrent selon les dates réelles
+        const testMode = false; // NE PAS MODIFIER - Mode production activé
+        
+        // Charger les cases ouvertes
+        let openedDays = [];
+        try {
+            const saved = localStorage.getItem('strangerOpened');
+            if (saved) openedDays = JSON.parse(saved);
+        } catch(e) {
+            console.log("Erreur chargement calendrier Stranger Things");
+        }
+
+        strangerDays.forEach((item, index) => {
+            const dayDiv = document.createElement('div');
+            dayDiv.className = 'stranger-day';
+            dayDiv.dataset.day = item.day;
+            dayDiv.dataset.emoji = strangerEmojis[index % strangerEmojis.length];
+            
+            // Logique pour décembre (mois 11) et janvier (mois 0)
+            let canOpen = false;
+            if (testMode) {
+                // MODE TEST : Tout est déverrouillé
+                canOpen = true;
+            } else {
+                // MODE PRODUCTION : Vérifier les dates réelles
+                if (item.day >= 25) {
+                    // Jours de décembre (25-31)
+                    canOpen = currentMonth === 11 && currentDay >= item.day;
+                } else {
+                    // Jour de janvier (1er)
+                    canOpen = (currentMonth === 0 && currentDay >= item.day) || (currentMonth === 11 && currentDay === 31);
+                }
+            }
+            
+            const isOpened = openedDays.includes(item.day);
+            const isToday = (item.day >= 25 && currentMonth === 11 && currentDay === item.day) || 
+                           (item.day === 1 && currentMonth === 0 && currentDay === 1);
+            
+            if (!canOpen) {
+                dayDiv.classList.add('locked');
+            }
+            
+            if (isOpened) {
+                dayDiv.classList.add('opened');
+            }
+            
+            if (isToday && !isOpened) {
+                dayDiv.classList.add('today');
+            }
+            
+            const displayDay = item.day === 1 ? "1er" : item.day;
+            dayDiv.innerHTML = `<span class="day-number">${displayDay}</span>`;
+            
+            dayDiv.addEventListener('click', () => {
+                if (!canOpen) {
+                    const monthName = item.day >= 25 ? "décembre" : "janvier";
+                    alert(`🔦 Patience ! Cette case s'ouvrira le ${item.day} ${monthName} ! 🔦`);
+                    return;
+                }
+                
+                // Marquer comme ouvert
+                if (!openedDays.includes(item.day)) {
+                    openedDays.push(item.day);
+                    try {
+                        localStorage.setItem('strangerOpened', JSON.stringify(openedDays));
+                    } catch(e) {
+                        console.log("Erreur sauvegarde calendrier");
+                    }
+                    dayDiv.classList.add('opened');
+                }
+                
+                // Fermer le calendrier
+                const strangerCalendar = document.getElementById('strangerCalendar');
+                const overlay = document.querySelector('.advent-overlay');
+                strangerCalendar.classList.remove('open');
+                overlay.classList.remove('show');
+                
+                // Afficher le message
+                showStrangerMessage(item);
+            });
+            
+            strangerGrid.appendChild(dayDiv);
+        });
+    }
+
+    // Afficher le message Stranger Things
+    function showStrangerMessage(item) {
+        const dayText = item.day === 1 ? "1er janvier" : `${item.day} décembre`;
+        
+        if (item.type === "announce") {
+            alert(`🔦 ${dayText} 🔦\n\n${item.message}`);
+        } else if (item.type === "anecdote") {
+            alert(`🔦 Le saviez-vous ? (${dayText}) 🔦\n\n${item.message}`);
+        } else {
+            alert(`🔦 ${dayText} 🔦\n\n${item.message}`);
+        }
+    }
+
+    // Initialiser le calendrier Stranger Things
+    initStrangerCalendar();
+
     // Calendrier de l'Avent - Groupes par jour avec styles différents
     const adventBands = [
         { day: 1, band: "Black Sabbath", genre: "Heavy Metal" },
@@ -209,6 +333,10 @@ bands.sort((a, b) => a.name.localeCompare(b.name));
     const adventCalendar = document.getElementById('adventCalendar');
     const closeAdvent = document.getElementById('closeAdvent');
     
+    const strangerBtn = document.getElementById('strangerBtn');
+    const strangerCalendar = document.getElementById('strangerCalendar');
+    const closeStranger = document.getElementById('closeStranger');
+    
     // Créer l'overlay
     const overlay = document.createElement('div');
     overlay.className = 'advent-overlay';
@@ -228,9 +356,24 @@ bands.sort((a, b) => a.name.localeCompare(b.name));
         });
     }
     
+    if (strangerBtn) {
+        strangerBtn.addEventListener('click', () => {
+            strangerCalendar.classList.add('open');
+            overlay.classList.add('show');
+        });
+    }
+    
+    if (closeStranger) {
+        closeStranger.addEventListener('click', () => {
+            strangerCalendar.classList.remove('open');
+            overlay.classList.remove('show');
+        });
+    }
+    
     // Fermer en cliquant sur l'overlay
     overlay.addEventListener('click', () => {
         adventCalendar.classList.remove('open');
+        strangerCalendar.classList.remove('open');
         overlay.classList.remove('show');
     });
 
@@ -514,9 +657,50 @@ bands.sort((a, b) => a.name.localeCompare(b.name));
     const themeLight = document.getElementById('themeLight');
     const themeColor = document.getElementById('themeColor');
     const themeNoel = document.getElementById('themeNoel');
+    const themeStranger = document.getElementById('themeStranger');
     const body = document.body;
 
-    if (themeDark && themeLight && themeColor && themeNoel) {
+    // Vérifier si on est entre le 25 décembre et le 1er janvier
+    function isStrangerThingsPeriod() {
+        const today = new Date();
+        const month = today.getMonth(); // 11 = décembre, 0 = janvier
+        const day = today.getDate();
+        
+        // Du 25 au 31 décembre OU le 1er janvier
+        return (month === 11 && day >= 25) || (month === 0 && day === 1);
+    }
+
+    // Vérifier si on est dans la période de Noël (1er au 24 décembre)
+    function isNoelPeriod() {
+        const today = new Date();
+        const month = today.getMonth(); // 11 = décembre
+        const day = today.getDate();
+        
+        // Du 1er au 24 décembre uniquement
+        return month === 11 && day >= 1 && day <= 24;
+    }
+
+    // Masquer/afficher les boutons de thème selon la période
+    function updateThemeButtons() {
+        if (isStrangerThingsPeriod()) {
+            // Période Stranger Things (25 déc - 1er jan) : cacher Noël, montrer Stranger Things
+            if (themeNoel) themeNoel.style.display = 'none';
+            if (themeStranger) themeStranger.style.display = 'inline-block';
+        } else if (isNoelPeriod()) {
+            // Période Noël (1-24 déc) : montrer Noël, cacher Stranger Things
+            if (themeNoel) themeNoel.style.display = 'inline-block';
+            if (themeStranger) themeStranger.style.display = 'none';
+        } else {
+            // Reste de l'année : cacher les deux thèmes
+            if (themeNoel) themeNoel.style.display = 'none';
+            if (themeStranger) themeStranger.style.display = 'none';
+        }
+    }
+
+    // Appeler au chargement
+    updateThemeButtons();
+
+    if (themeDark && themeLight && themeColor && themeNoel && themeStranger) {
         console.log("Boutons de thème trouvés !");
 
         try {
@@ -527,6 +711,7 @@ bands.sort((a, b) => a.name.localeCompare(b.name));
             else if (savedTheme === 'light') themeLight.classList.add('active');
             else if (savedTheme === 'color') themeColor.classList.add('active');
             else if (savedTheme === 'noel') themeNoel.classList.add('active');
+            else if (savedTheme === 'stranger') themeStranger.classList.add('active');
         } catch(e) {
             console.log("Erreur chargement thème:", e);
         }
@@ -574,6 +759,18 @@ bands.sort((a, b) => a.name.localeCompare(b.name));
             themeNoel.classList.add('active');
             try {
                 localStorage.setItem('theme', 'noel');
+            } catch(e) {
+                console.log("localStorage non disponible");
+            }
+        });
+
+        themeStranger.addEventListener('click', () => {
+            console.log("Thème Stranger Things cliqué");
+            body.className = 'theme-stranger';
+            document.querySelectorAll('.theme-btn').forEach(btn => btn.classList.remove('active'));
+            themeStranger.classList.add('active');
+            try {
+                localStorage.setItem('theme', 'stranger');
             } catch(e) {
                 console.log("localStorage non disponible");
             }
