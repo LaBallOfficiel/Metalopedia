@@ -422,6 +422,10 @@ bands.sort((a, b) => a.name.localeCompare(b.name));
             const genreDisplay = Array.isArray(band.genre) ? band.genre.join(", ") : band.genre;
             const isFavorite = favorites.includes(band.name);
             
+            const detailBtn = band.detailPage
+                ? `<a href="${band.detailPage}" class="detail-btn" onclick="event.stopPropagation()">Détails</a>`
+                : '';
+
             container.innerHTML = `
                 <div class="band-header">
                     <strong>${band.name}</strong>
@@ -433,6 +437,7 @@ bands.sort((a, b) => a.name.localeCompare(b.name));
                     <p><strong>Genre(s) :</strong> ${genreDisplay}</p>
                     <p><strong>Anecdote :</strong> ${band.anecdote}</p>
                     <p><strong>Membres actuels :</strong> ${band.membres.join(", ")}</p>
+                    ${detailBtn}
                 </div>
             `;
             
@@ -496,7 +501,10 @@ bands.sort((a, b) => a.name.localeCompare(b.name));
                     const container = document.createElement("div");
                     container.className = "band";
                     const genreDisplay = Array.isArray(band.genre) ? band.genre.join(", ") : band.genre;
-                    
+                    const detailBtnFav = band.detailPage
+                        ? `<a href="${band.detailPage}" class="detail-btn" onclick="event.stopPropagation()">Détails</a>`
+                        : '';
+
                     container.innerHTML = `
                         <div class="band-header">
                             <strong>${band.name}</strong>
@@ -508,6 +516,7 @@ bands.sort((a, b) => a.name.localeCompare(b.name));
                             <p><strong>Genre(s) :</strong> ${genreDisplay}</p>
                             <p><strong>Anecdote :</strong> ${band.anecdote}</p>
                             <p><strong>Membres actuels :</strong> ${band.membres.join(", ")}</p>
+                            ${detailBtnFav}
                         </div>
                     `;
                     

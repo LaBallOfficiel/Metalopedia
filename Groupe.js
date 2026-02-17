@@ -105,7 +105,8 @@
         yearEnd: null,
         genre: "Black Metal",
         anecdote: "Pionniers du black metal norvégien. Leur histoire tragique inclut meurtre et incendies d'églises.",
-        membres: ["Attila Csihar", "Necrobutcher", "Hellhammer", "Teloch", "Ghul"]
+        membres: ["Attila Csihar", "Necrobutcher", "Hellhammer", "Teloch", "Ghul"],
+        detailPage: "Mayhem.html"
     },
     { 
         name: "Burzum", 
@@ -2005,5 +2006,5 @@
     genre: ["Power Metal", "Heavy Metal"],
     anecdote: "Collaboration entre membres de Gacharic Spin et Fuki (Unlucky Morpheus). Séparés en 2017.",
     membres: ["Fuki", "Hana", "Natsume", "Tomo-zo", "Oreo Reona"]
-}
+},
     ];
